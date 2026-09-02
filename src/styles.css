@@ -1,0 +1,30 @@
+@import "tailwindcss" source("../");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,400..600&family=Archivo:wght@400;500;600;700&display=swap");
+
+:root {
+  --ledger-bg: #f4ede1;
+  --ledger-bg-alt: #ece2d2;
+  --ledger-ink: #2c241c;
+  --ledger-rust: #a8481f;
+  --ledger-rust-dark: #7f3316;
+  --ledger-line: #cbb99e;
+  --ledger-green: #4a5d3a;
+}
+
+body {
+  @apply m-0;
+  background-color: var(--ledger-bg);
+  color: var(--ledger-ink);
+  font-family: "Archivo", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-display {
+  font-family: "Fraunces", serif;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
