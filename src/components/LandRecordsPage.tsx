@@ -108,12 +108,12 @@ export default function LandRecordsPage({ initialRecords }: { initialRecords: La
             className="mb-3 text-xs font-semibold tracking-[0.25em] uppercase"
             style={{ color: 'var(--ledger-rust)' }}
           >
-            Keelapalli | JR Kothapalli | Ponnamakulapalli
+            Software Engineer / Agriculture Land Owner
           </p>
           <h1 className="font-display text-4xl leading-tight font-semibold md:text-6xl">
-            Dilip's old & new survey numbers Register
+            Dilip Pathikonda Survey Numbers
             <br />
-            <span style={{ color: 'var(--ledger-rust)' }}>Software Engineer / Farmer</span>
+            <span style={{ color: 'var(--ledger-rust)' }}>Keelapalli | JR Kothapalli | Ponnamakulapalli</span>
           </h1>
           <p className="mt-4 max-w-xl text-base md:text-lg" style={{ color: '#5c5145' }}>
             Log survey numbers, extent, and who tills each plot &mdash; a running ledger you and your
@@ -143,14 +143,18 @@ export default function LandRecordsPage({ initialRecords }: { initialRecords: La
               />
             </Field>
 
-            <Field label="Village / hamlet" htmlFor="village">
-              <input
+            <Field label="Village" htmlFor="village">
+              <select
                 id="village"
                 value={form.village}
                 onChange={(e) => update('village', e.target.value)}
-                placeholder="e.g. Kondapur"
                 className={inputClass(false)}
-              />
+              >
+                <option value="">Select village / hamlet</option>
+                <option value="1">Keelapalli</option>
+                <option value="2">Ponnamakanpalli</option>
+                <option value="3">JR Kothapalli</option>
+              </select>
             </Field>
 
             <div className="grid grid-cols-[1fr_auto] gap-3">
@@ -245,7 +249,7 @@ export default function LandRecordsPage({ initialRecords }: { initialRecords: La
 
         <section>
           <div className="mb-4 flex items-baseline justify-between">
-            <h2 className="font-display text-2xl font-semibold">Register entries</h2>
+            <h2 className="font-display text-2xl font-semibold">Survey Numbers</h2>
             <span className="text-sm" style={{ color: '#5c5145' }}>
               {records.length} {records.length === 1 ? 'plot' : 'plots'}
             </span>
