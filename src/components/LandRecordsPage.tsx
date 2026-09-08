@@ -108,12 +108,12 @@ export default function LandRecordsPage({ initialRecords }: { initialRecords: La
             className="mb-3 text-xs font-semibold tracking-[0.25em] uppercase"
             style={{ color: 'var(--ledger-rust)' }}
           >
-            Village Land Register
+            Keelapalli | JR Kothapalli | Ponnamakulapalli
           </p>
           <h1 className="font-display text-4xl leading-tight font-semibold md:text-6xl">
-            Every parcel,
+            Dilip's old & new survey numbers Register
             <br />
-            <span style={{ color: 'var(--ledger-rust)' }}>every farmer</span>, on record.
+            <span style={{ color: 'var(--ledger-rust)' }}>Software Engineer / Farmer</span>
           </h1>
           <p className="mt-4 max-w-xl text-base md:text-lg" style={{ color: '#5c5145' }}>
             Log survey numbers, extent, and who tills each plot &mdash; a running ledger you and your
