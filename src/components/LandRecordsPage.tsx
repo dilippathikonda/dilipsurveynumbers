@@ -150,7 +150,7 @@ export default function LandRecordsPage({ initialRecords }: { initialRecords: La
                 onChange={(e) => update('village', e.target.value)}
                 className={inputClass(false)}
               >
-                <option value="">Select village / hamlet</option>
+                <option value="">Select village</option>
                 <option value="1">Keelapalli</option>
                 <option value="2">Ponnamakanpalli</option>
                 <option value="3">JR Kothapalli</option>
@@ -164,7 +164,7 @@ export default function LandRecordsPage({ initialRecords }: { initialRecords: La
                   inputMode="decimal"
                   value={form.landExtent}
                   onChange={(e) => update('landExtent', e.target.value)}
-                  placeholder="e.g. 2.5"
+                  placeholder="e.g. 0.0000"
                   className={inputClass(!!errors.landExtent)}
                 />
               </Field>
@@ -184,12 +184,38 @@ export default function LandRecordsPage({ initialRecords }: { initialRecords: La
               </Field>
             </div>
 
+            <Field label="Considered for Land Ceiling" htmlFor="landCeiling" error={errors.landCeiling} required>
+              <div>
+                <label>
+                  <input
+                    type="radio"
+                    name="landCeiling"
+                    value="No"
+                    checked={form.landCeiling === 'No'}
+                    onChange={(e) => update('landCeiling', e.target.value)}
+                  />
+                  No
+                </label>
+              
+                <label>
+                  <input
+                    type="radio"
+                    name="landCeiling"
+                    value="Yes"
+                    checked={form.landCeiling === 'Yes'}
+                    onChange={(e) => update('landCeiling', e.target.value)}
+                  />
+                  Yes
+                </label>
+              </div>
+            </Field>
+            
             <Field label="Owner's name" htmlFor="ownerName" error={errors.ownerName} required>
               <input
                 id="ownerName"
                 value={form.ownerName}
                 onChange={(e) => update('ownerName', e.target.value)}
-                placeholder="e.g. Lakshmi Reddy"
+                placeholder="e.g. Dilip/Sandeep"
                 className={inputClass(!!errors.ownerName)}
               />
             </Field>
@@ -199,7 +225,7 @@ export default function LandRecordsPage({ initialRecords }: { initialRecords: La
                 id="cultivatorName"
                 value={form.cultivatorName}
                 onChange={(e) => update('cultivatorName', e.target.value)}
-                placeholder="e.g. Ramaiah Naidu (tenant)"
+                placeholder="e.g. Ramaiah Naidu (farmer)"
                 className={inputClass(!!errors.cultivatorName)}
               />
             </Field>
